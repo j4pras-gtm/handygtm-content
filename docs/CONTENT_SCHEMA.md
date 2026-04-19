@@ -57,30 +57,22 @@ member:
 ## Why this works
 
 Markdown body goes here. Headings (##, ###), lists, links — all supported. This body powers the long-form public page AND the member view.
-```
+Field rules
+Field	Required	Notes
+slug	yes	kebab-case, must match filename
+title	yes	≤ 70 chars
+summary	yes	≤ 160 chars; used in cards + meta description fallback
+motion	yes	one of the 6 motions
+difficulty	yes	Starter / Intermediate / Advanced
+tools[]	yes	slugs that match tools/<slug>.md
+steps[]	yes	min 3 steps for HowTo schema
+faq[]	optional	drives FAQPage JSON-LD
+internalLinks[]	yes	min 2 — every playbook links to ≥2 related pages
+seo.metaTitle	yes	≤ 60 chars
+seo.metaDescription	yes	≤ 155 chars
+member.*	optional	gated content; ignored on public page
+Blog post — blog/<slug>.md
 
-### Field rules
-
-| Field | Required | Notes |
-|---|---|---|
-| `slug` | yes | kebab-case, must match filename |
-| `title` | yes | ≤ 70 chars |
-| `summary` | yes | ≤ 160 chars; used in cards + meta description fallback |
-| `motion` | yes | one of the 6 motions |
-| `difficulty` | yes | Starter / Intermediate / Advanced |
-| `tools[]` | yes | slugs that match `tools/<slug>.md` |
-| `steps[]` | yes | min 3 steps for HowTo schema |
-| `faq[]` | optional | drives FAQPage JSON-LD |
-| `internalLinks[]` | yes | min 2 — every playbook links to ≥2 related pages |
-| `seo.metaTitle` | yes | ≤ 60 chars |
-| `seo.metaDescription` | yes | ≤ 155 chars |
-| `member.*` | optional | gated content; ignored on public page |
-
----
-
-## Blog post — `blog/<slug>.md`
-
-```yaml
 ---
 slug: what-is-gtm-engineering
 title: "What is GTM Engineering, really?"
@@ -99,13 +91,8 @@ seo:
 ---
 
 Markdown body here. Every blog post must internally link to ≥1 playbook.
-```
+Tool — tools/<slug>.md
 
----
-
-## Tool — `tools/<slug>.md`
-
-```yaml
 ---
 slug: clay
 name: "Clay"
@@ -124,15 +111,10 @@ affiliateUrl: ""             # optional, populated for member affiliate block
 ---
 
 Markdown body: when to use it, when not to, gotchas.
-```
+Tools are referenced by slug from playbooks. Never duplicate tool details inside a playbook.
 
-Tools are **referenced by slug** from playbooks. Never duplicate tool details inside a playbook.
+Author — authors/<slug>.md
 
----
-
-## Author — `authors/<slug>.md`
-
-```yaml
 ---
 slug: handygtm-team
 name: "HandyGTM Team"
@@ -142,18 +124,12 @@ links:
   twitter: ""
   linkedin: ""
 ---
-```
-
----
-
-## `index.json` (auto-generated)
-
+index.json (auto-generated)
 Generated at build time by walking the content directories. Drives nav/listing without re-parsing every markdown file at runtime.
 
-```json
+
 {
   "playbooks": [{ "slug": "...", "title": "...", "motion": "...", "difficulty": "..." }],
   "blog": [{ "slug": "...", "title": "...", "publishedAt": "..." }],
   "tools": [{ "slug": "...", "name": "..." }]
 }
-```
