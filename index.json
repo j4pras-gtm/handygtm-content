@@ -1,0 +1,173 @@
+{
+  "playbooks": [
+    {
+      "slug": "signal-based-outbound-with-clay",
+      "title": "Signal-based outbound with Clay + Smartlead",
+      "motion": "outbound",
+      "difficulty": "Intermediate"
+    },
+    {
+      "slug": "ai-enriched-icp-list-building",
+      "title": "AI-enriched ICP list building",
+      "motion": "outbound",
+      "difficulty": "Starter"
+    },
+    {
+      "slug": "programmatic-seo-pages",
+      "title": "Programmatic SEO pages from a structured dataset",
+      "motion": "inbound",
+      "difficulty": "Intermediate"
+    },
+    {
+      "slug": "lead-magnet-conversion-loop",
+      "title": "Lead magnet → community → pipeline loop",
+      "motion": "inbound",
+      "difficulty": "Starter"
+    },
+    {
+      "slug": "activation-aha-moment-mapping",
+      "title": "Aha-moment activation mapping",
+      "motion": "product-led",
+      "difficulty": "Intermediate"
+    },
+    {
+      "slug": "self-serve-onboarding-tour",
+      "title": "Self-serve onboarding tour for a free tier",
+      "motion": "product-led",
+      "difficulty": "Starter"
+    },
+    {
+      "slug": "operator-led-community-launch",
+      "title": "Operator-led community launch playbook",
+      "motion": "community",
+      "difficulty": "Starter"
+    },
+    {
+      "slug": "ambassador-loop",
+      "title": "Ambassador & power-user loop",
+      "motion": "community",
+      "difficulty": "Intermediate"
+    },
+    {
+      "slug": "lead-routing-and-handoff",
+      "title": "Lead routing & handoff governance",
+      "motion": "revops",
+      "difficulty": "Advanced"
+    },
+    {
+      "slug": "ai-first-pipeline-reporting",
+      "title": "AI-first pipeline reporting",
+      "motion": "revops",
+      "difficulty": "Advanced"
+    }
+  ],
+  "blog": [
+    {
+      "slug": "what-is-gtm-engineering",
+      "title": "What is GTM Engineering, really?",
+      "publishedAt": "2025-09-12",
+      "category": "Guide"
+    },
+    {
+      "slug": "ai-first-outbound-checklist",
+      "title": "The AI-first outbound checklist",
+      "publishedAt": "2025-10-02",
+      "category": "Tactics"
+    },
+    {
+      "slug": "stop-buying-tools-start-building-systems",
+      "title": "Stop buying tools. Start building systems.",
+      "publishedAt": "2025-10-21",
+      "category": "Notes"
+    },
+    {
+      "slug": "tiny-tip-clay-enrichment-hygiene",
+      "title": "Tiny tip: keep your Clay enrichments boring",
+      "publishedAt": "2025-11-04",
+      "category": "Tips"
+    }
+  ],
+  "tools": [
+    {
+      "slug": "clay",
+      "name": "Clay"
+    },
+    {
+      "slug": "smartlead",
+      "name": "Smartlead"
+    },
+    {
+      "slug": "openai",
+      "name": "OpenAI"
+    },
+    {
+      "slug": "apollo",
+      "name": "Apollo"
+    },
+    {
+      "slug": "apify",
+      "name": "Apify"
+    },
+    {
+      "slug": "webflow",
+      "name": "Webflow"
+    },
+    {
+      "slug": "airtable",
+      "name": "Airtable"
+    },
+    {
+      "slug": "claude",
+      "name": "Claude"
+    },
+    {
+      "slug": "beehiiv",
+      "name": "Beehiiv"
+    },
+    {
+      "slug": "notion",
+      "name": "Notion"
+    },
+    {
+      "slug": "slack",
+      "name": "Slack"
+    },
+    {
+      "slug": "posthog",
+      "name": "PostHog"
+    },
+    {
+      "slug": "customer-io",
+      "name": "Customer.io"
+    },
+    {
+      "slug": "userflow",
+      "name": "Userflow"
+    },
+    {
+      "slug": "circle",
+      "name": "Circle"
+    },
+    {
+      "slug": "hubspot",
+      "name": "HubSpot"
+    },
+    {
+      "slug": "tally",
+      "name": "Tally"
+    },
+    {
+      "slug": "default",
+      "name": "Default"
+    },
+    {
+      "slug": "snowflake",
+      "name": "Snowflake"
+    },
+    {
+      "slug": "hex",
+      "name": "Hex"
+    }
+  ],
+  "generatedAt": "2026-04-19T20:28:41.543Z"
+}
