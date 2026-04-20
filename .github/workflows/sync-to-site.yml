@@ -1,1 +1,44 @@
+name: Sync content to handygtm site
 
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout content repo
+        uses: actions/checkout@v4
+        with:
+          path: content-repo
+
+      - name: Checkout site repo
+        uses: actions/checkout@v4
+        with:
+          repository: j4pras-gtm/handygtm
+          token: ${{ secrets.SITE_REPO_TOKEN }}
+          path: site-repo
+
+      - name: Sync content/ folder
+        run: |
+          rsync -av --delete \
+            --exclude='.git' \
+            --exclude='.github' \
+            --exclude='README.md' \
+            content-repo/ site-repo/content/
+
+      - name: Commit and push to site repo
+        working-directory: site-repo
+        run: |
+          git config user.name "handygtm-content-sync[bot]"
+          git config user.email "content-sync@handygtm.local"
+          git add content/
+          if git diff --staged --quiet; then
+            echo "No content changes to sync."
+          else
+            SHORT_SHA=$(cd ../content-repo && git rev-parse --short HEAD)
+            git commit -m "content: sync from handygtm-content@${SHORT_SHA}"
+            git push origin main
+          fi
